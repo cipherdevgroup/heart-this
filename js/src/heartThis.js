@@ -11,6 +11,9 @@
 
 	var $hearts = $( '.heart-this' );
 
+	cookie.defaults.expires = 999;
+	cookie.defaults.path = '/';
+
 	function setupHearts() {
 		$hearts.each(function() {
 			var $link = $( this ),
@@ -64,8 +67,6 @@
 
 	// Document ready.
 	$( document ).ready(function() {
-		cookie.defaults.expires = 999;
-		cookie.defaults.path = '/';
 		setupHearts();
 		handleClicks();
 	});
