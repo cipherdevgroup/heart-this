@@ -38,9 +38,9 @@ function heart_this_admin_register_settings() {
 	);
 
 	add_settings_field(
-		'disable_css',
-		__( 'Disable CSS', 'heart-this' ),
-		'heart_this_admin_setting_disable_css',
+		'enable_css',
+		__( 'Enable CSS', 'heart-this' ),
+		'heart_this_admin_setting_enable_css',
 		'heart-this',
 		'heart-this'
 	);
@@ -141,13 +141,13 @@ function heart_this_admin_setting_show_on() {
  * @access public
  * @return void
  */
-function heart_this_admin_setting_disable_css() {
+function heart_this_admin_setting_enable_css() {
 	$options_slug = heart_this_get_options_slug();
 
 	printf( '<label><input type="checkbox" name="%s" value="yes"%s >%s</label><br>',
-		"{$options_slug}[disable_css]",
-		'yes' === heart_this_get_option( 'disable_css' ) ? ' checked="checked"' : '',
-		esc_html__( 'I want to use my own CSS styles', 'heart-this' )
+		"{$options_slug}[enable_css]",
+		'yes' === heart_this_get_option( 'enable_css' ) ? ' checked="checked"' : '',
+		esc_html__( 'Load the default plugin styles.', 'heart-this' )
 	);
 }
 
