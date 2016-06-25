@@ -8,7 +8,7 @@ class Heart_This_Popular_Posts extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'heart_this_widget',
-			'HeartThis',
+			'Heart This - Popular Posts',
 			array(
 				'description' => __( 'Displays your most popular posts sorted by most liked', 'heart-this' ),
 			)
