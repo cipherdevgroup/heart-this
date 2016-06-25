@@ -169,15 +169,16 @@ function heart_this_ajax_callback( $post_id ) {
 	check_ajax_referer( 'heart-this-get-set', 'security' );
 
 	$data = $_POST; // Input var okay.
-	$output = '';
 
 	if ( isset( $data['heartsID'] ) ) {
-		$output = heart_this_set_hearts_count( absint( $data['heartsID'] ), $data['heartsValue'] );
-	} elseif ( isset( $data['postID'] ) ) {
-		$output = heart_this_get_hearts_count( absint( $data['postID'] ) );
+		heart_this_set_hearts_count( absint( $data['heartsID'] ), $data['heartsValue'] );
+		exit;
 	}
 
-	echo wp_json_encode( $output );
+	if ( isset( $data['postID'] ) ) {
+		heart_this_get_hearts_count( absint( $data['postID'] ) );
+		exit;
+	}
 
 	exit;
 }
