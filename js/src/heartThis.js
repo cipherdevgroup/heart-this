@@ -35,10 +35,6 @@
 			var $link = $( this ),
 				data, cookieName;
 
-			if ( $link.hasClass( 'active' ) ) {
-				return false;
-			}
-
 			data = {
 				action: 'heart-this',
 				security: heartThis.ajaxNonce,
@@ -50,10 +46,16 @@
 
 			$.post( heartThis.ajaxURL, data, function( data ) {
 				if ( 'hearted' !== cookie.get( cookieName ) ) {
-					cookie.set( cookieName, 'hearted' );
-					$link.find( 'span' ).text( data );
+					cookie.set( cookieName, 'hearted', {
+						expires: 999
+					});
 					$link.addClass( 'active' );
+				} else {
+					cookie.remove( cookieName );
+					$link.removeClass( 'active' );
 				}
+
+				$link.find( 'span' ).text( data );
 			});
 
 			return false;

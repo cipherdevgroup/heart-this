@@ -120,10 +120,10 @@ function heart_this_set_hearts_count( $post_id, $data = array() ) {
 	$hearts = heart_this_get_meta( $post_id );
 
 	if ( heart_this_is_hearted( $post_id, $data ) ) {
-		return $hearts;
+		$hearts--;
+	} else {
+		$hearts++;
 	}
-
-	$hearts++;
 
 	heart_this_update_meta( $post_id, $hearts );
 
