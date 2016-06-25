@@ -1,0 +1,23 @@
+{
+  "name": "wpsitecare/heart-this",
+  "description": "An heart this.",
+  "type": "wordpress-plugin",
+  "homepage" : "http://www.wpsitecare.com",
+  "license" : "MIT",
+  "authors" : [
+    {
+      "name" : "Robert Neu",
+      "email" : "rob@wpsitecare.com",
+      "homepage" : "http://www.wpsitecare.com"
+    }
+  ],
+  "support" : {
+    "issues" : "https://github.com/wpsitecare/heart-this/issues"
+  },
+  "config": {
+      "vendor-dir": "includes/vendor"
+  },
+  "require": {
+      "composer/installers": "~1.0"
+  }
+}

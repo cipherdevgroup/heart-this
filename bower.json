@@ -1,0 +1,9 @@
+{
+  "name": "heart-this",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "cookie": "^1.2.0"
+  }
+}

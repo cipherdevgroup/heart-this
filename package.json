@@ -1,0 +1,48 @@
+{
+  "nameSpaced":    "Heart This",
+  "nameSpacedLow": "heart this",
+  "nameDashed":    "heart-this",
+  "nameUscore":    "heart_this",
+  "nameUscoreUp":  "HEART_THIS",
+  "nameUscoreCam": "Heart_This",
+  "nameCamel":     "HeartThis",
+  "nameCamelLow":  "heartThis",
+  "version":       "0.1.0",
+  "copyright":     "2016",
+  "license":       "MIT",
+  "private":       true,
+  "bugs": {
+    "url":   "http://www.wpsitecare.com/support/",
+    "email": "hello@wpsitecare.com"
+  },
+  "contributors": [
+    {
+      "name": "Robert Neu",
+      "url":  "http://www.wpsitecare.com"
+    },
+    {
+      "name": "WP Site Care",
+      "url":  "http://www.wpsitecare.com"
+    }
+  ],
+  "plugin": {
+    "name":       "Heart This",
+    "uri":        "https://github.com/wpsitecare/heart-this",
+    "author":     "WP Site Care",
+    "license":    "MIT",
+    "licenseuri": "http://wpsitecare.mit-license.org/"
+  },
+  "pot": {
+    "reportmsgidbugsto": "Robert Neu <translations@wpsitecare.com>",
+    "lasttranslator":    "Robert Neu <translations@wpsitecare.com>",
+    "languageteam":      "Robert Neu <translations@wpsitecare.com>"
+  },
+  "repository": {
+    "type": "git",
+    "url":  "https://github.com/wpsitecare/heart-this.git"
+  },
+  "devDependencies": {
+    "sitecare-plugin-config": "wpsitecare/sitecare-plugin-config",
+    "load-project-config": "~0.2.0"
+  }
+}

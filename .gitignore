@@ -1,0 +1,30 @@
+.DS_Store
+.sass-cache
+
+# Development files
+node_modules
+bower_components
+
+# Development directories
+dist/
+docs/
+tmp/
+
+# Auto-Generated Files
+js/*
+css/*
+images/*
+!js/src/
+!js/src/*
+!js/src/**/*
+!css/src/
+!css/src/*
+!css/src/**/*
+!images/src/
+!images/src/*
+!images/src/**/*
+
+# Third-party dependencies
+includes/vendor/*
+js/vendor/*
+css/vendor/*
