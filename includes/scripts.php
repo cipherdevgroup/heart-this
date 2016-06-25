@@ -59,7 +59,12 @@ function _heart_this_enable_packed_js() {
  * @return void
  */
 function heart_this_load_css() {
-	if ( apply_filters( 'heart_this_disable_css', heart_this_get_option( 'disable_css' ) ) ) {
+	$load = true;
+	if ( 'yes' === heart_this_get_option( 'disable_css' ) ) {
+		$load = false;
+	}
+
+	if ( ! (bool) apply_filters( 'heart_this_load_css', $load ) ) {
 		return;
 	}
 
