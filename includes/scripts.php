@@ -168,7 +168,7 @@ function heart_this_load_unpacked_js() {
 function heart_this_ajax_callback( $post_id ) {
 	check_ajax_referer( 'heart-this-get-set', 'security' );
 
-	$data = $_POST; // Input var okay.
+	$data = wp_unslash( $_POST ); // Input var okay.
 
 	if ( isset( $data['heartsID'] ) ) {
 		heart_this_set_hearts_count( absint( $data['heartsID'] ), $data['heartsValue'] );
