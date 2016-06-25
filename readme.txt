@@ -7,7 +7,7 @@ Tested up to: 4.3
 Stable tag: 0.1.0
 License: MIT
 
-Heart This is an example of a plugin.
+Add a simple heart button to let people tell you they love your WordPress content.
 
 == Description ==
 

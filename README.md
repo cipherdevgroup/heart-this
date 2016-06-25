@@ -1,15 +1,15 @@
 # Heart This
 
-An heart this for WP Site Care projects.
+Add a simple heart button to let people tell you they love your WordPress content.
 
 __Contributors:__ [Robert Neu](https://github.com/robneu)  
-__Requires:__ WordPress 4.3  
-__Tested up to:__ WordPress 4.3  
+__Requires:__ WordPress 4.5  
+__Tested up to:__ WordPress 4.5  
 __License:__ [MIT](http://wpsitecare.mit-license.org/)  
 
 ## Description ##
 
-Heart This is an example of a plugin.
+Heart This is an easy way to let users show you how much they love your content.
 
 ## Installation ##
 
