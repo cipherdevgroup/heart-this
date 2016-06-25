@@ -46,12 +46,12 @@
 
 			$.post( heartThis.ajaxURL, data, function( data ) {
 				if ( 'hearted' !== cookie.get( cookieName ) ) {
-					cookie.set( cookieName, 'hearted', {
-						expires: 999
-					});
+					cookie.remove( cookieName );
+					cookie.set( cookieName, 'hearted' );
 					$link.addClass( 'active' );
 				} else {
 					cookie.remove( cookieName );
+					cookie.set( cookieName, 'unhearted' );
 					$link.removeClass( 'active' );
 				}
 
@@ -64,6 +64,8 @@
 
 	// Document ready.
 	$( document ).ready(function() {
+		cookie.defaults.expires = 999;
+		cookie.defaults.path = '/';
 		setupHearts();
 		handleClicks();
 	});

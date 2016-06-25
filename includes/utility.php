@@ -93,11 +93,11 @@ function heart_this_setup_hearts( $post_id ) {
  * @return bool
  */
 function heart_this_is_hearted( $post_id, $data = array() ) {
-	if ( ! isset( $data['cookie'] ) ) {
+	if ( ! isset( $data['cookie'] ) || ! isset( $_COOKIE[ $data['cookie'] ] ) ) { // Input var okay.
 		return false;
 	}
 
-	return isset( $_COOKIE[ $data['cookie'] ] ); // Input var okay.
+	return 'hearted' === $_COOKIE[ $data['cookie'] ]; // Input var okay.
 }
 
 function _heart_this_prepare_post_id( $raw_id ) {
