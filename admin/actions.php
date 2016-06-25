@@ -15,14 +15,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @see heart_this_load_textdomain
  */
-add_action( 'admin_head-plugins.php', 'heart_this_load_textdomain' );
-
-/**
- * Callback defined in includes/language.php
- *
- * @see heart_this_load_textdomain
- */
-add_action( 'admin_head-options-general.php', 'heart_this_load_textdomain' );
+add_action( 'admin_init', 'heart_this_load_textdomain' );
 
 /**
  * Callback defined in admin/settings.php
