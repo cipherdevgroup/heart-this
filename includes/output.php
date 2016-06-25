@@ -43,7 +43,7 @@ function heart_this_get_hearts( $post_id = false ) {
 		$post_id = get_the_ID();
 	}
 
-	return sprintf( '<a href="#" class="heart-this" id="heart-this-%s"><span class="heart-this-count">%s<span></a>',
+	return sprintf( '<a href="#" class="heart-this" id="heart-this-%s"><span class="heart-this-count">%s</span></a>',
 		$post_id,
 		heart_this_get_hearts_count( $post_id )
 	);
