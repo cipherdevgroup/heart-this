@@ -9,16 +9,27 @@
 ( function( window, $, undefined ) {
 	'use strict';
 
-	var $hearts = $( '.heart-this' );
+	var $hearts = $( '.heart-this' ),
+		delay;
 
 	cookie.defaults.expires = 999;
 	cookie.defaults.path = '/';
 
+	delay = (function() {
+		var timer = 0;
+		return function( callback, ms ) {
+			clearTimeout ( timer );
+			timer = setTimeout( callback, ms );
+		};
+	})();
+
 	function setupHearts() {
 		$hearts.each(function() {
-			var $link = $( this );
+			var $link = $( this ),
+				postID     = $link.data( 'post-id' ),
+				cookieName = postID + '-heart-status';
 
-			if ( 'hearted' === cookie.get( $link.attr( 'id' ) ) ) {
+			if ( 'hearted' === cookie.get( cookieName ) ) {
 				$link.addClass( 'active' );
 			}
 
@@ -26,33 +37,24 @@
 				$link.load( heartThis.ajaxURL, {
 					action: 'heart-this',
 					security: heartThis.ajaxNonce,
-					postID: $link.data( 'post-id' )
+					postID: postID
 				});
 			}
 		});
 	}
 
 	function handleClicks() {
-		var delay = (function() {
-			var timer = 0;
-			return function( callback, ms ) {
-				clearTimeout ( timer );
-				timer = setTimeout( callback, ms );
-			};
-		})();
-
 		$hearts.on( 'click', function() {
 			var $link      = $( this ),
-				cookieName = $link.attr( 'id' ),
+				postID     = $link.data( 'post-id' ),
+				cookieName = postID + '-heart-status',
 				$number    = $link.find( 'span' );
 
 			if ( 'hearted' !== cookie.get( cookieName ) ) {
-				cookie.remove( cookieName );
 				cookie.set( cookieName, 'hearted' );
 				$number.text( ( parseInt( $number.text(), 10 ) || 0 ) + 1 );
 				$link.addClass( 'active' );
 			} else {
-				cookie.remove( cookieName );
 				cookie.set( cookieName, 'unhearted' );
 				$number.text( ( parseInt( $number.text(), 10 ) || 0 ) - 1 );
 				$link.removeClass( 'active' );
@@ -62,7 +64,7 @@
 				$.post( heartThis.ajaxURL, {
 					action: 'heart-this',
 					security: heartThis.ajaxNonce,
-					heartsID: $link.data( 'post-id' ),
+					heartsID: postID,
 					heartsValue: $number.text()
 				} );
 			}, 1000 );
