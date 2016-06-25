@@ -172,14 +172,9 @@ function heart_this_ajax_callback( $post_id ) {
 	$output = '';
 
 	if ( isset( $data['heartsID'] ) ) {
-		$output = heart_this_set_hearts_count(
-			_heart_this_prepare_post_id( $data['heartsID'] ),
-			$data
-		);
+		$output = heart_this_set_hearts_count( absint( $data['heartsID'] ), $data['heartsValue'] );
 	} elseif ( isset( $data['postID'] ) ) {
-		$output = heart_this_get_hearts_count(
-			_heart_this_prepare_post_id( $data['postID'] )
-		);
+		$output = heart_this_get_hearts_count( absint( $data['postID'] ) );
 	}
 
 	echo wp_json_encode( $output );
