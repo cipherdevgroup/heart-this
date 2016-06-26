@@ -9,7 +9,8 @@
 ( function( window, $, undefined ) {
 	'use strict';
 
-	var $hearts = $( '.heart-this' ),
+	var $hearts   = $( '.heart-this' ),
+		cookieSuffix = '-heart-this-status',
 		delay;
 
 	cookie.defaults.expires = 999;
@@ -25,11 +26,11 @@
 
 	function setupHearts() {
 		$hearts.each(function() {
-			var $link      = $( this ),
-				postID     = $link.data( 'post-id' ),
-				cookieName = postID + '-heart-status';
+			var $link    = $( this ),
+				postID   = $link.data( 'post-id' ),
+				cookieID = postID + cookieSuffix;
 
-			if ( 'hearted' === cookie.get( cookieName ) ) {
+			if ( 'hearted' === cookie.get( cookieID ) ) {
 				$link.addClass( 'active' );
 			}
 
@@ -45,17 +46,17 @@
 
 	function handleClicks() {
 		$hearts.on( 'click', function() {
-			var $link      = $( this ),
-				postID     = $link.data( 'post-id' ),
-				cookieName = postID + '-heart-status',
-				$number    = $link.find( 'span' );
+			var $link    = $( this ),
+				postID   = $link.data( 'post-id' ),
+				cookieID = postID + cookieSuffix,
+				$number  = $link.find( 'span' );
 
-			if ( 'hearted' !== cookie.get( cookieName ) ) {
-				cookie.set( cookieName, 'hearted' );
+			if ( 'hearted' !== cookie.get( cookieID ) ) {
+				cookie.set( cookieID, 'hearted' );
 				$number.text( ( parseInt( $number.text(), 10 ) || 0 ) + 1 );
 				$link.addClass( 'active' );
 			} else {
-				cookie.set( cookieName, 'unhearted' );
+				cookie.set( cookieID, 'unhearted' );
 				$number.text( ( parseInt( $number.text(), 10 ) || 0 ) - 1 );
 				$link.removeClass( 'active' );
 			}
