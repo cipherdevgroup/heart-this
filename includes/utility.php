@@ -34,6 +34,22 @@ function heart_this_shortcode( $atts ) {
 }
 
 /**
+ * Add a body class when ajax heart loading is enabled.
+ *
+ * @since  0.1.0
+ * @access public
+ * @param  array $classes The existing body classes.
+ * @return array $classes The updated body classes.
+ */
+function heart_this_body_class( $classes ) {
+	if ( 'yes' === heart_this_get_option( 'ajax_hearts' ) ) {
+		$classes[] = 'ajax-heart-this';
+	}
+
+	return $classes;
+}
+
+/**
  * Add the post meta value for hearts.
  *
  * @since  0.1.0

@@ -48,22 +48,6 @@ function heart_this_the_content( $content ) {
 }
 
 /**
- * Add a body class when ajax heart loading is enabled.
- *
- * @since  0.1.0
- * @access public
- * @param  array $classes The existing body classes.
- * @return array $classes The updated body classes.
- */
-function heart_this_body_class( $classes ) {
-	if ( 'yes' === heart_this_get_option( 'ajax_hearts' ) ) {
-		$classes[] = 'ajax-heart-this';
-	}
-
-	return $classes;
-}
-
-/**
  * Return HTML markup to display the heart count and button for liking content.
  *
  * @since  0.1.0
