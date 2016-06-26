@@ -62,14 +62,16 @@
 				$link.removeClass( 'active' );
 			}
 
-			delay( function() {
-				$.post( heartThis.ajaxURL, {
-					action: 'heart-this',
-					security: heartThis.ajaxNonce,
-					heartsID: postID,
-					heartsValue: $number.text()
-				} );
-			}, 2000 );
+			if ( cookie.get( cookieID ) ) {
+				delay( function() {
+					$.post( heartThis.ajaxURL, {
+						action: 'heart-this',
+						security: heartThis.ajaxNonce,
+						heartsID: postID,
+						heartsValue: $number.text()
+					} );
+				}, 2000 );
+			}
 
 			return false;
 		});
