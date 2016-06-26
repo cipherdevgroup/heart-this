@@ -44,20 +44,24 @@
 		});
 	}
 
-	function updateNumber( $number, $object, cookieID ) {
-		var currentNumber = ( parseInt( $number.text(), 10 ) || 0 );
+	function updateCount( currentCount, cookieID, postID ) {
+		var $instances = $( '[data-post-id="' + postID + '"]' ),
+			$allNums = $instances.find( 'span' ),
+			updatedCount;
 
 		if ( 'hearted' !== cookie.get( cookieID ) ) {
 			cookie.set( cookieID, 'hearted' );
-			$number.text( currentNumber + 1 );
-			$object.addClass( 'active is-animating' );
+			updatedCount = currentCount + 1;
+			$allNums.text( updatedCount );
+			$instances.addClass( 'active is-animating' );
 		} else {
 			cookie.set( cookieID, 'unhearted' );
-			$number.text( currentNumber - 1 );
-			$object.removeClass( 'active' );
+			updatedCount = currentCount - 1;
+			$allNums.text( updatedCount );
+			$instances.removeClass( 'active' );
 		}
 
-		return $number;
+		return updatedCount;
 	}
 
 	function handleClicks() {
@@ -65,9 +69,10 @@
 			var $link    = $( this ),
 				postID   = $link.data( 'post-id' ),
 				cookieID = postID + cookieSuffix,
-				$number  = $link.find( 'span' );
+				currentCount = ( parseInt( $link.find( 'span' ).text(), 10 ) || 0 ),
+				updatedCount;
 
-			$number = updateNumber( $number, $link, cookieID );
+			updatedCount = updateCount( currentCount, cookieID, postID );
 
 			if ( cookie.get( cookieID ) ) {
 				delay( function() {
@@ -75,7 +80,7 @@
 						action: 'heart-this',
 						security: heartThis.ajaxNonce,
 						heartsID: postID,
-						heartsValue: $number.text()
+						heartsValue: updatedCount
 					} );
 				}, 2000 );
 			}
