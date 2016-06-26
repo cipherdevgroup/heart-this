@@ -171,12 +171,12 @@ function heart_this_ajax_callback( $post_id ) {
 	$data = wp_unslash( $_POST ); // Input var okay.
 
 	if ( isset( $data['heartsID'] ) ) {
-		heart_this_set_hearts_count( absint( $data['heartsID'] ), $data['heartsValue'] );
+		heart_this_update_meta( absint( $data['heartsID'] ), $data['heartsValue'] );
 		exit;
 	}
 
 	if ( isset( $data['postID'] ) ) {
-		heart_this_get_hearts_count( absint( $data['postID'] ) );
+		heart_this_get_meta( absint( $data['postID'] ) );
 		exit;
 	}
 

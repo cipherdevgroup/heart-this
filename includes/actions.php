@@ -34,9 +34,9 @@ add_action( 'widgets_init', 'heart_this_register_widgets' );
 /**
  * Callback defined in includes/utility.php
  *
- * @see heart_this_setup_hearts
+ * @see heart_this_add_meta
  */
-add_action( 'publish_post', 'heart_this_setup_hearts' );
+add_action( 'publish_post', 'heart_this_add_meta' );
 
 /**
  * Callback defined in includes/utility.php

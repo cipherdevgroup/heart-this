@@ -54,7 +54,13 @@ function heart_this_add_meta( $post_id ) {
  * @return int
  */
 function heart_this_get_meta( $post_id ) {
-	return get_post_meta( $post_id, '_heart_this', true );
+	$hearts = heart_this_get_meta( $post_id );
+
+	if ( ! $hearts ) {
+		heart_this_add_meta( $post_id );
+	}
+
+	return absint( $hearts );
 }
 
 /**
@@ -68,54 +74,4 @@ function heart_this_get_meta( $post_id ) {
  */
 function heart_this_update_meta( $post_id, $value ) {
 	return (bool) update_post_meta( $post_id, '_heart_this', absint( $value ) );
-}
-
-/**
- * Set up post meta for posts that don't have it yet.
- *
- * @since  0.1.0
- * @access public
- * @param  int $post_id The current post ID.
- * @return void
- */
-function heart_this_setup_hearts( $post_id ) {
-	return heart_this_add_meta( $post_id );
-}
-
-/**
- * Set the hearts count for a given post.
- *
- * @since  0.1.0
- * @access public
- * @param  int $post_id The post ID where the data to be updated exists.
- * @param  int $value The the value to use when updating the count.
- * @return bool true if the meta has been updated.
- */
-function heart_this_set_hearts_count( $post_id, $value ) {
-	$hearts = (int) heart_this_get_meta( $post_id );
-	$value  = (int) $value;
-
-	if ( $value === $hearts ) {
-		return false;
-	}
-
-	return heart_this_update_meta( $post_id, $value );
-}
-
-/**
- * Get the hearts count for a given post.
- *
- * @since  0.1.0
- * @access public
- * @param  int $post_id The current post ID.
- * @return int $hearts The number of hearts for a given post.
- */
-function heart_this_get_hearts_count( $post_id ) {
-	$hearts = heart_this_get_meta( $post_id );
-
-	if ( ! $hearts ) {
-		heart_this_add_meta( $post_id );
-	}
-
-	return absint( $hearts );
 }

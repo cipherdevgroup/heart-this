@@ -46,7 +46,7 @@ function heart_this_get_hearts( $post_id = false ) {
 	return sprintf( '<a href="#" class="heart-this" id="heart-this-%s" data-post-id="%s"><span class="heart-this-count">%s</span></a>',
 		uniqid(),
 		$post_id,
-		heart_this_get_hearts_count( $post_id )
+		heart_this_get_meta( $post_id )
 	);
 }
 
