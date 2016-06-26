@@ -82,7 +82,7 @@
 						heartsID: postID,
 						heartsValue: updatedCount
 					} );
-				}, 2000 );
+				}, 500 );
 			}
 
 			return false;
