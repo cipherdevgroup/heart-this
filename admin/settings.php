@@ -87,16 +87,7 @@ function heart_this_admin_add_settings_page() {
  * @return void
  */
 function heart_this_admin_settings_page() {
-	?>
-	<div class="wrap">
-		<h1><?php esc_html_e( 'Heart This Settings', 'heart-this' ); ?></h2>
-		<form action="options.php" method="post">
-			<?php settings_fields( 'heart-this' ); ?>
-			<?php do_settings_sections( 'heart-this' ); ?>
-			<?php submit_button(); ?>
-		</form>
-	</div>
-	<?php
+	require_once HEART_THIS_DIR . 'admin/views/settings-page.php';
 }
 
 /**
@@ -126,11 +117,10 @@ function heart_this_admin_setting_show_on() {
 	);
 
 	foreach ( $options as $option => $label ) {
-		printf( '<label><input type="checkbox" name="%s" value="yes"%s >%s</label><br>',
-			"{$options_slug}[{$option}]",
-			'yes' === heart_this_get_option( $option ) ? ' checked="checked"' : '',
-			esc_html( $label )
-		);
+		$name = "{$options_slug}[{$option}]";
+		$checked = 'yes' === heart_this_get_option( $option ) ? ' checked="checked"' : '';
+
+		require HEART_THIS_DIR . 'admin/views/setting-show-on.php';
 	}
 }
 
@@ -142,13 +132,10 @@ function heart_this_admin_setting_show_on() {
  * @return void
  */
 function heart_this_admin_setting_enable_css() {
-	$options_slug = heart_this_get_options_slug();
+	$name = heart_this_get_options_slug() . '[enable_css]';
+	$checked = 'yes' === heart_this_get_option( 'enable_css' ) ? ' checked="checked"' : '';
 
-	printf( '<label><input type="checkbox" name="%s" value="yes"%s >%s</label><br>',
-		"{$options_slug}[enable_css]",
-		'yes' === heart_this_get_option( 'enable_css' ) ? ' checked="checked"' : '',
-		esc_html__( 'Load the default plugin styles.', 'heart-this' )
-	);
+	require_once HEART_THIS_DIR . 'admin/views/setting-enable-css.php';
 }
 
 /**
@@ -159,17 +146,10 @@ function heart_this_admin_setting_enable_css() {
  * @return void
  */
 function heart_this_admin_setting_ajax_hearts() {
-	$options_slug = heart_this_get_options_slug();
+	$name = heart_this_get_options_slug() . '[ajax_hearts]';
+	$checked = 'yes' === heart_this_get_option( 'ajax_hearts' ) ? ' checked="checked"' : '';
 
-	printf( '<label><input type="checkbox" name="%s" value="yes"%s >%s</label><br>',
-		"{$options_slug}[ajax_hearts]",
-		'yes' === heart_this_get_option( 'ajax_hearts' ) ? ' checked="checked"' : '',
-		esc_html__( 'AJAX Heart Counts on page load', 'heart-this' )
-	);
-
-	printf( '<span class="description">%s</span>',
-		esc_html__( 'If you are using a caching plugin, you may want to dynamically load the like counts via AJAX.', 'heart-this' )
-	);
+	require_once HEART_THIS_DIR . 'admin/views/setting-ajax-hearts.php';
 }
 
 /**
@@ -180,20 +160,7 @@ function heart_this_admin_setting_ajax_hearts() {
  * @return void
  */
 function heart_this_admin_setting_instructions() {
-	?>
-	<p><?php esc_html_e( 'To use Heart This in your posts and pages you can use the shortcode:', 'heart-this' ); ?></p>
-	<p><code>[heart_this_hearts]</code></p>
-	<p><?php esc_html_e( 'To use Heart This manually in your theme template use the following PHP code:', 'heart-this' ); ?></p>
-	<p>
-		<code>
-			&lt;?php
-			if ( function_exists( 'heart_this_hearts' ) ) {
-				heart_this_hearts();
-			}
-			?&gt;
-		</code>
-	</p>
-	<?php
+	require_once HEART_THIS_DIR . 'admin/views/setting-instructions.php';
 }
 
 /**
