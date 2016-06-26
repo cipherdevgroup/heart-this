@@ -25,7 +25,7 @@
 
 	function setupHearts() {
 		$hearts.each(function() {
-			var $link = $( this ),
+			var $link      = $( this ),
 				postID     = $link.data( 'post-id' ),
 				cookieName = postID + '-heart-status';
 
@@ -67,7 +67,7 @@
 					heartsID: postID,
 					heartsValue: $number.text()
 				} );
-			}, 1000 );
+			}, 2000 );
 
 			return false;
 		});
