@@ -44,6 +44,22 @@
 		});
 	}
 
+	function updateNumber( $number, $object, cookieID ) {
+		var currentNumber = ( parseInt( $number.text(), 10 ) || 0 );
+
+		if ( 'hearted' !== cookie.get( cookieID ) ) {
+			cookie.set( cookieID, 'hearted' );
+			$number.text( currentNumber + 1 );
+			$object.addClass( 'active is-animating' );
+		} else {
+			cookie.set( cookieID, 'unhearted' );
+			$number.text( currentNumber - 1 );
+			$object.removeClass( 'active' );
+		}
+
+		return $number;
+	}
+
 	function handleClicks() {
 		$hearts.on( 'click touchstart', function() {
 			var $link    = $( this ),
@@ -51,16 +67,7 @@
 				cookieID = postID + cookieSuffix,
 				$number  = $link.find( 'span' );
 
-			if ( 'hearted' !== cookie.get( cookieID ) ) {
-				cookie.set( cookieID, 'hearted' );
-				$number.text( ( parseInt( $number.text(), 10 ) || 0 ) + 1 );
-				$link.addClass( 'active' );
-				$link.addClass( 'is-animating' );
-			} else {
-				cookie.set( cookieID, 'unhearted' );
-				$number.text( ( parseInt( $number.text(), 10 ) || 0 ) - 1 );
-				$link.removeClass( 'active' );
-			}
+			$number = updateNumber( $number, $link, cookieID );
 
 			if ( cookie.get( cookieID ) ) {
 				delay( function() {
