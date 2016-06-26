@@ -45,7 +45,7 @@
 	}
 
 	function handleClicks() {
-		$hearts.on( 'click', function() {
+		$hearts.on( 'click touchstart', function() {
 			var $link    = $( this ),
 				postID   = $link.data( 'post-id' ),
 				cookieID = postID + cookieSuffix,
@@ -55,6 +55,7 @@
 				cookie.set( cookieID, 'hearted' );
 				$number.text( ( parseInt( $number.text(), 10 ) || 0 ) + 1 );
 				$link.addClass( 'active' );
+				$link.addClass( 'is-animating' );
 			} else {
 				cookie.set( cookieID, 'unhearted' );
 				$number.text( ( parseInt( $number.text(), 10 ) || 0 ) - 1 );
@@ -71,6 +72,10 @@
 			}, 2000 );
 
 			return false;
+		});
+
+		$hearts.on( 'webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
+			$( this ).removeClass( 'is-animating' );
 		});
 	}
 

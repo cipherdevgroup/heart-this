@@ -1,19 +1,41 @@
+@keyframes heart-burst {
+	from {
+		background-position: left;
+	}
+
+	to {
+		background-position: right;
+	}
+}
+
 .heart-this {
-	background: url(../images/heart.png) no-repeat 0 49%;
-	border: 0 !important;
-	display: inline-block;
-	margin-bottom: 10px;
-	min-height: 14px;
-	padding-left: 18px;
-	text-decoration: none;
+	height: 50px;
+
+	&::before {
+		background-image: url("../images/heart-animation.png");
+		background-position: left;
+		background-repeat: no-repeat;
+		background-size: 2900%;
+		border: 0 !important;
+		content: "";
+		display: inline-block;
+		cursor: pointer;
+		height: 50px;
+		width: 50px;
+		text-decoration: none;
+		transition: none !important;
+	}
 
 	&:hover,
-	&:focus,
 	&.active {
-		background: url(../images/heart_active.png) no-repeat 0 49%;
-		border: 0 !important;
-		margin: 0 0 10px 0 !important;
-		padding-left: 18px !important;
-		text-decoration: none;
+		&::before {
+			background-position: right;
+		}
+	}
+
+	&.is-animating {
+		&::before {
+			animation: heart-burst 0.8s steps(28) 1;
+		}
 	}
 }
