@@ -92,6 +92,13 @@ function heart_this_setup_hearts( $post_id ) {
  * @return bool true if the meta has been updated.
  */
 function heart_this_set_hearts_count( $post_id, $value ) {
+	$hearts = (int) heart_this_get_meta( $post_id );
+	$value  = (int) $value;
+
+	if ( $value === $hearts ) {
+		return false;
+	}
+
 	return heart_this_update_meta( $post_id, $value );
 }
 
