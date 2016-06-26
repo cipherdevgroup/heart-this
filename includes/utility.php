@@ -54,7 +54,7 @@ function heart_this_add_meta( $post_id ) {
  * @return int
  */
 function heart_this_get_meta( $post_id ) {
-	$hearts = heart_this_get_meta( $post_id );
+	$hearts = get_post_meta( $post_id, '_heart_this', true );
 
 	if ( ! $hearts ) {
 		heart_this_add_meta( $post_id );
