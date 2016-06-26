@@ -82,7 +82,9 @@
 
 			return false;
 		});
+	}
 
+	function stopAnimating() {
 		$hearts.on( 'webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
 			$( this ).removeClass( 'is-animating' );
 		});
@@ -92,5 +94,6 @@
 	$( document ).ready(function() {
 		setupHearts();
 		handleClicks();
+		stopAnimating();
 	});
 })( this, jQuery );
