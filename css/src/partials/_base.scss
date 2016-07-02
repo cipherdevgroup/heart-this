@@ -1,41 +1,54 @@
-@keyframes heart-burst {
-	from {
-		background-position: left;
-	}
+.heart-this-wrap {
+	clear: both;
 
-	to {
-		background-position: right;
-	}
-}
-
-.heart-this {
-	height: 50px;
-
-	&::before {
-		background-image: url("../images/heart-animation.png");
-		background-position: left;
-		background-repeat: no-repeat;
-		background-size: 2900%;
-		border: 0 !important;
-		content: "";
+	.heart-this {
+		color: $gray;
 		display: inline-block;
-		cursor: pointer;
-		height: 50px;
-		width: 50px;
+		height: 40px;
+		font-size: 14px;
 		text-decoration: none;
-		transition: none !important;
-	}
+		box-shadow: none;
+		vertical-align: middle;
 
-	&:hover,
-	&.active {
 		&::before {
-			background-position: right;
+			background-image: url("../images/heart-animation.png");
+			background-position: left;
+			background-repeat: no-repeat;
+			background-size: 2900%;
+			border: 0;
+			content: "";
+			display: inline-block;
+			cursor: pointer;
+			height: 100%;
+			width: 50px;
+			text-decoration: none;
+			transition: none;
+			vertical-align: middle;
 		}
-	}
 
-	&.is-animating {
-		&::before {
-			animation: heart-burst 0.8s steps(28) 1;
+		&:hover,
+		&:focus,
+		&.active {
+			color: $red;
+			text-decoration: none;
+			box-shadow: none;
+
+			&::before {
+				background-position: right;
+			}
+		}
+
+		&.is-animating {
+			&::before {
+				animation: heart-burst 0.8s steps(28) 1;
+			}
+		}
+
+		span {
+			display: inline-block;
+			margin-left: -5px;
+			vertical-align: baseline;
+			line-height: 1;
 		}
 	}
 }
