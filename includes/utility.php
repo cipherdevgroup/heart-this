@@ -28,9 +28,12 @@ function heart_this_register_widgets() {
  * @return string Formatted HTML for the heart_this shortcode.
  */
 function heart_this_shortcode( $atts ) {
-	$atts = shortcode_atts( array(), $atts );
+	$atts = shortcode_atts( array(
+		'post_id' => false,
+		'wrap'    => true,
+	), $atts );
 
-	return heart_this_get_hearts();
+	return heart_this_get_hearts( $atts['post_id'], $atts['wrap'] );
 }
 
 /**
