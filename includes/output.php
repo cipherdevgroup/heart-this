@@ -10,6 +10,42 @@
  */
 
 /**
+ * Return HTML markup to display the heart count and button for liking content.
+ *
+ * @since  0.1.0
+ * @access public
+ * @param  int $post_id The ID if the post to display hearts for.
+ * @return string $hearts The formatted markup to display hearts.
+ */
+function heart_this_get_hearts( $post_id = false ) {
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+
+	$wrap = '<div class="heart-this-wrap">%s</div>';
+
+	$output = sprintf( $wrap, sprintf( '<a href="#" class="heart-this" id="heart-this-%s" data-post-id="%s"><span>%s</span></a>',
+		uniqid(),
+		$post_id,
+		heart_this_get_meta( $post_id )
+	) );
+
+	return $output;
+}
+
+/**
+ * Output HTML markup to display the heart count and button for liking content.
+ *
+ * @since  0.1.0
+ * @access public
+ * @param  int $post_id The ID if the post to display hearts for.
+ * @return void
+ */
+function heart_this_hearts( $post_id = false ) {
+	echo heart_this_get_hearts( $post_id );
+}
+
+/**
  * Callback to filter the hearts output into the WordPress content.
  *
  * @since  0.1.0
@@ -45,36 +81,4 @@ function heart_this_the_content( $content ) {
 	}
 
 	return $content;
-}
-
-/**
- * Return HTML markup to display the heart count and button for liking content.
- *
- * @since  0.1.0
- * @access public
- * @param  int $post_id The ID if the post to display hearts for.
- * @return string $hearts The formatted markup to display hearts.
- */
-function heart_this_get_hearts( $post_id = false ) {
-	if ( ! $post_id ) {
-		$post_id = get_the_ID();
-	}
-
-	return sprintf( '<a href="#" class="heart-this" id="heart-this-%s" data-post-id="%s"><span class="heart-this-count">%s</span></a>',
-		uniqid(),
-		$post_id,
-		heart_this_get_meta( $post_id )
-	);
-}
-
-/**
- * Output HTML markup to display the heart count and button for liking content.
- *
- * @since  0.1.0
- * @access public
- * @param  int $post_id The ID if the post to display hearts for.
- * @return void
- */
-function heart_this_hearts( $post_id = false ) {
-	echo heart_this_get_hearts( $post_id );
 }
