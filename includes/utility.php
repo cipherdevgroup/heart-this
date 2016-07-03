@@ -33,7 +33,11 @@ function heart_this_shortcode( $atts ) {
 		'wrap'    => true,
 	), $atts );
 
-	return heart_this_get_hearts( $atts['post_id'], $atts['wrap'] );
+	if ( 'false' === $atts['wrap'] ) {
+		$atts['wrap'] = false;
+	}
+
+	return heart_this_get_hearts( $atts['post_id'], (bool) $atts['wrap'] );
 }
 
 /**

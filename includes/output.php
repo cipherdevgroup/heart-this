@@ -28,7 +28,7 @@ function heart_this_get_hearts( $post_id = false, $wrap = true ) {
 		heart_this_get_meta( $post_id )
 	);
 
-	if ( $wrap ) {
+	if ( false !== $wrap ) {
 		$output = sprintf( '<span class="heart-this-wrap">%s</span>', $output );
 	}
 
