@@ -102,6 +102,20 @@ function heart_this_admin_setting_section_intro() {
 }
 
 /**
+ * Return a list of potential display locations for hearts.
+ *
+ * @since  0.1.0
+ * @access public
+ * @return array A list of option values for when to show hearts.
+ */
+function heart_this_admin_get_show_option_values() {
+	$shows = array_values( get_post_types( array( 'public' => true ) ) );
+	array_unshift( $shows, 'index' );
+
+	return $shows;
+}
+
+/**
  * Output markup for the plugin display settings.
  *
  * @since  0.1.0
@@ -110,18 +124,10 @@ function heart_this_admin_setting_section_intro() {
  */
 function heart_this_admin_setting_show_on() {
 	$options_slug = heart_this_get_options_slug();
-	$options = array(
-		'add_to_posts' => __( 'Posts', 'heart-this' ),
-		'add_to_pages' => __( 'Pages', 'heart-this' ),
-		'add_to_other' => __( 'Blog Index Page, Archive Pages, and Search Results', 'heart-this' ),
-	);
+	$option       = (array) heart_this_get_option( 'show' );
+	$name         = "{$options_slug}[show][]";
 
-	foreach ( $options as $option => $label ) {
-		$name = "{$options_slug}[{$option}]";
-		$checked = 'yes' === heart_this_get_option( $option ) ? ' checked="checked"' : '';
-
-		require HEART_THIS_DIR . 'admin/views/setting-show-on.php';
-	}
+	require HEART_THIS_DIR . 'admin/views/setting-show-on.php';
 }
 
 /**
@@ -164,6 +170,28 @@ function heart_this_admin_setting_instructions() {
 }
 
 /**
+ * Ensure only valid options are allowed for the show-on settings.
+ *
+ * @since  0.1.0
+ * @access public
+ * @param  array $input The raw input.
+ * @return array An array of validated and sanitized options.
+ */
+function heart_this_sanitize_show_options( $input ) {
+	if ( empty( $input['show'] ) ) {
+		return array();
+	}
+
+	foreach ( (array) $input['show'] as $key => $show ) {
+		if ( ! in_array( $show, heart_this_admin_get_show_option_values(), true ) ) {
+			unset( $input['show'][ $key ] );
+		}
+	}
+
+	return $input['show'];
+}
+
+/**
  * Validate the settings.
  *
  * @since  0.1.0
@@ -173,18 +201,28 @@ function heart_this_admin_setting_instructions() {
  */
 function heart_this_admin_settings_validate( $input ) {
 	foreach ( heart_this_get_default_options() as $key => $value ) {
+		if ( 'show' === $key ) {
+			continue;
+		}
+
 		if ( ! isset( $input[ $key ] ) ) {
 			$input[ $key ] = 'no';
 		}
 	}
 
 	foreach ( $input as $key => $value ) {
+		if ( 'show' === $key ) {
+			continue;
+		}
+
 		if ( 'yes' !== $value ) {
 			$input[ $key ] = 'no';
 		} else {
 			$input[ $key ] = 'yes';
 		}
 	}
+
+	$input['show'] = heart_this_sanitize_show_options( $input );
 
 	return $input;
 }

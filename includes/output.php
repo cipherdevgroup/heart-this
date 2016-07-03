@@ -46,6 +46,35 @@ function heart_this_hearts( $post_id = false ) {
 }
 
 /**
+ * Determine whether or not hearts should be automatically added.
+ *
+ * @since  0.1.0
+ * @access public
+ * @param  int $post_id The post ID to be checked.
+ * @return bool True if hearts should be auto-shown, false otherwise.
+ */
+function heart_this_should_auto_show( $post_id ) {
+	if ( is_feed() ) {
+		return false;
+	}
+
+	$show = false;
+	$option = (array) heart_this_get_option( 'show' );
+
+	if ( is_singular() && in_array( get_post_type(), $option, true ) ) {
+		$show = true;
+	}
+
+	$is_other = ( is_home() || is_archive() || is_search() || in_array( get_post_type(), $option, true ) );
+
+	if ( in_array( 'index', $option, true ) && $is_other ) {
+		$show = true;
+	}
+
+	return (bool) apply_filters( 'heart_this_should_auto_show', $show, $post_id );
+}
+
+/**
  * Callback to filter the hearts output into the WordPress content.
  *
  * @since  0.1.0
@@ -58,25 +87,29 @@ function heart_this_the_content( $content ) {
 		return $content;
 	}
 
-	global $wp_current_filter;
+	global $post, $wp_current_filter;
+
+	if ( empty( $post ) || is_preview() || is_admin() ) {
+		return $content;
+	}
 
 	if ( in_array( 'get_the_excerpt', (array) $wp_current_filter, true ) ) {
 		return $content;
 	}
 
-	$options = heart_this_get_options();
-
-	if ( is_singular( 'post' ) && 'yes' === $options['add_to_posts'] ) {
-		$content .= heart_this_get_hearts();
+	// Prevent potential infinite loops.
+	$done = false;
+	foreach ( $wp_current_filter as $filter ) {
+		if ( 'the_content' === $filter ) {
+			if ( $done ) {
+				return $content;
+			} else {
+				$done = true;
+			}
+		}
 	}
 
-	if ( is_page() && ! is_front_page() && 'yes' === $options['add_to_pages'] ) {
-		$content .= heart_this_get_hearts();
-	}
-
-	$is_other = is_front_page() || is_home() || is_category() || is_tag() || is_author() || is_date() || is_search();
-
-	if ( $is_other && 'yes' === $options['add_to_other'] ) {
+	if ( heart_this_should_auto_show( $post->ID ) ) {
 		$content .= heart_this_get_hearts();
 	}
 

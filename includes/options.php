@@ -28,11 +28,9 @@ function heart_this_get_options_slug() {
  */
 function heart_this_get_default_options() {
 	return array(
-		'enable_css'   => 'yes',
-		'add_to_posts' => 'yes',
-		'add_to_pages' => 'no',
-		'add_to_other' => 'no',
-		'ajax_hearts'  => 'no',
+		'show'        => array( 'post' ),
+		'enable_css'  => 'yes',
+		'ajax_hearts' => 'no',
 	);
 }
 

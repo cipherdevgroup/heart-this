@@ -9,8 +9,24 @@
  */
 
 ?>
-<label>
-	<input type="checkbox" name="<?php echo $name; ?>" value="yes"<?php echo $checked; ?> >
-	<?php echo esc_html( $label ); ?>
-</label>
-<br>
+<?php $br = false; ?>
+
+<?php foreach ( heart_this_admin_get_show_option_values() as $show ) :
+	if ( 'index' === $show ) :
+		$label = __( 'Front Page, Archive Pages, and Search Results', 'nice-social' );
+	else :
+		$label = get_post_type_object( $show )->labels->name;
+	endif;
+	?>
+
+	<?php if ( $br ) : ?>
+		<br />
+	<?php endif; ?>
+
+	<label>
+		<input type="checkbox"<?php checked( in_array( $show, $option, true ) ); ?> name="<?php echo $name; ?>" value="<?php echo esc_attr( $show ); ?>" /> <?php echo esc_html( $label ); ?>
+	</label>
+
+	<?php $br = true; ?>
+
+<?php endforeach; ?>
