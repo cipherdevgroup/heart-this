@@ -17,7 +17,7 @@
  * @param  int $post_id The ID if the post to display hearts for.
  * @return string $hearts The formatted markup to display hearts.
  */
-function heart_this_get_hearts( $post_id = false, $wrap = true ) {
+function heart_this_get_hearts( $post_id = false ) {
 	if ( ! $post_id ) {
 		$post_id = get_the_ID();
 	}
@@ -28,11 +28,9 @@ function heart_this_get_hearts( $post_id = false, $wrap = true ) {
 		heart_this_get_meta( $post_id )
 	);
 
-	if ( false !== $wrap ) {
-		$output = sprintf( '<span class="heart-this-wrap">%s</span>', $output );
-	}
+	$output = sprintf( '<span class="heart-this-wrap">%s</span>', $output );
 
-	return $output;
+	return apply_filters( 'heart_this_hearts', $output, $post_id );
 }
 
 /**

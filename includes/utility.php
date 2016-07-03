@@ -30,14 +30,9 @@ function heart_this_register_widgets() {
 function heart_this_shortcode( $atts ) {
 	$atts = shortcode_atts( array(
 		'post_id' => false,
-		'wrap'    => true,
 	), $atts );
 
-	if ( 'false' === $atts['wrap'] ) {
-		$atts['wrap'] = false;
-	}
-
-	return heart_this_get_hearts( $atts['post_id'], (bool) $atts['wrap'] );
+	return heart_this_get_hearts( $atts['post_id'] );
 }
 
 /**
