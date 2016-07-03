@@ -35,7 +35,7 @@
 			}
 
 			if ( $( 'body' ).hasClass( 'ajax-heart-this' ) ) {
-				$link.load( heartThis.ajaxURL, {
+				$link.find( 'span' ).load( heartThis.ajaxURL, {
 					action: 'heart-this',
 					security: heartThis.ajaxNonce,
 					postID: postID

@@ -176,7 +176,7 @@ function heart_this_ajax_callback( $post_id ) {
 	}
 
 	if ( isset( $data['postID'] ) ) {
-		heart_this_get_meta( absint( $data['postID'] ) );
+		echo absint( heart_this_get_meta( absint( $data['postID'] ) ) );
 		exit;
 	}
 
