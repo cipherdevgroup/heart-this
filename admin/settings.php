@@ -31,7 +31,7 @@ function heart_this_admin_register_settings() {
 
 	add_settings_field(
 		'show_on',
-		__( 'Automatically show hearts on', 'heart-this' ),
+		__( 'Automatically enable on', 'heart-this' ),
 		'heart_this_admin_setting_show_on',
 		'heart-this',
 		'heart-this'
