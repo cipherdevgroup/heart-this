@@ -173,11 +173,11 @@ function heart_this_admin_setting_instructions() {
  * Ensure only valid options are allowed for the show-on settings.
  *
  * @since  0.1.0
- * @access public
+ * @access protected
  * @param  array $input The raw input.
  * @return array An array of validated and sanitized options.
  */
-function heart_this_sanitize_show_options( $input ) {
+function _heart_this_admin_sanitize_show_options( $input ) {
 	if ( empty( $input['show'] ) ) {
 		return array();
 	}
@@ -222,7 +222,7 @@ function heart_this_admin_settings_validate( $input ) {
 		}
 	}
 
-	$input['show'] = heart_this_sanitize_show_options( $input );
+	$input['show'] = _heart_this_admin_sanitize_show_options( $input );
 
 	return $input;
 }
