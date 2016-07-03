@@ -2,10 +2,10 @@
 /**
  * All default actions for the plugin.
  *
- * @package    HeartThis\Actions
- * @copyright  Copyright (c) 2016, WP Site Care
- * @license    MIT
- * @since      0.1.0
+ * @package   HeartThis\Actions
+ * @copyright Copyright (c) 2016, WP Site Care
+ * @license   MIT
+ * @since     0.1.0
  */
 
 defined( 'ABSPATH' ) || exit;

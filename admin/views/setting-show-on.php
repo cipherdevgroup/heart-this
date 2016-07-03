@@ -2,16 +2,17 @@
 /**
  * Display a setting for enabling automatic button insertion on certain pages.
  *
- * @package    HeartThis\Admin\Views
- * @copyright  Copyright (c) 2016, WP Site Care
- * @license    MIT
- * @since      0.1.0
+ * @package   HeartThis\Admin\Views
+ * @copyright Copyright (c) 2016, WP Site Care
+ * @license   MIT
+ * @since     0.1.0
  */
 
 ?>
 <?php $br = false; ?>
 
-<?php foreach ( heart_this_admin_get_show_option_values() as $show ) :
+<?php foreach ( heart_this_admin_get_show_option_values() as $show ) : ?>
+	<?php
 	if ( 'index' === $show ) :
 		$label = __( 'Front Page, Archive Pages, and Search Results', 'nice-social' );
 	else :

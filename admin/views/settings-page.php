@@ -2,10 +2,10 @@
 /**
  * Display the main settings page.
  *
- * @package    HeartThis\Admin\Views
- * @copyright  Copyright (c) 2016, WP Site Care
- * @license    MIT
- * @since      0.1.0
+ * @package   HeartThis\Admin\Views
+ * @copyright Copyright (c) 2016, WP Site Care
+ * @license   MIT
+ * @since     0.1.0
  */
 
 ?>

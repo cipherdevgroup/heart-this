@@ -2,10 +2,10 @@
 /**
  * Functions to load translations for the plugin.
  *
- * @package    HeartThis\Functions\Languages
- * @copyright  Copyright (c) 2016, WP Site Care
- * @license    MIT
- * @since      0.1.0
+ * @package   HeartThis\Functions\Languages
+ * @copyright Copyright (c) 2016, WP Site Care
+ * @license   MIT
+ * @since     0.1.0
  */
 
 /**

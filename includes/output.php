@@ -2,11 +2,10 @@
 /**
  * Functions to display heart counts on the front end.
  *
- * @package    HeartThis\Functions\Output
- * @author     Robert Neu
- * @copyright  Copyright (c) 2016, WP Site Care
- * @license    MIT
- * @since      0.1.0
+ * @package   HeartThis\Functions\Output
+ * @copyright Copyright (c) 2016, WP Site Care
+ * @license   MIT
+ * @since     0.1.0
  */
 
 /**
