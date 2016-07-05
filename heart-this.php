@@ -50,7 +50,7 @@ define( 'HEART_THIS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HEART_THIS_URI', plugin_dir_url( __FILE__ ) );
 
 require_once HEART_THIS_DIR . 'includes/plugin-hooks/includes.php';
-require_once HEART_THIS_DIR . 'includes/class-widget.php';
+require_once HEART_THIS_DIR . 'includes/widgets/class-popular-posts.php';
 require_once HEART_THIS_DIR . 'includes/language.php';
 require_once HEART_THIS_DIR . 'includes/options.php';
 require_once HEART_THIS_DIR . 'includes/output.php';
