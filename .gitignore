@@ -9,6 +9,7 @@ bower_components
 dist/
 docs/
 tmp/
+release/
 
 # Auto-Generated Files
 js/*
