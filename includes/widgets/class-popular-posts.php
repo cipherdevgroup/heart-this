@@ -47,11 +47,6 @@ class Heart_This_Popular_Posts extends WP_Widget {
 			'display_count' => 1,
 		) );
 
-		$title         = $instance['title'];
-		$description   = $instance['description'];
-		$posts         = $instance['posts'];
-		$display_count = $instance['display_count'];
-
 		require HEART_THIS_DIR . 'includes/widgets/form-popular-posts.php';
 	}
 }
