@@ -36,7 +36,7 @@ if ( ! empty( $hearts_posts ) ) {
 
 		if ( $instance['display_count'] ) {
 			$count_output = sprintf( ' <span class="heart-this-count">(%s)</span>',
-				heart_this_get_meta( $hearts_post->ID )
+				number_format_i18n( heart_this_get_meta( $hearts_post->ID ) )
 			);
 		}
 

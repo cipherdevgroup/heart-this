@@ -71,8 +71,8 @@ function heart_this_admin_register_settings() {
  */
 function heart_this_admin_add_settings_page() {
 	add_options_page(
-		'Heart This',
-		'Heart This',
+		__( 'Heart This Settings', 'heart-this' ),
+		__( 'Heart This Settings', 'heart-this' ),
 		'update_core',
 		'heart-this',
 		'heart_this_admin_settings_page'

@@ -24,11 +24,17 @@ function heart_this_get_hearts( $post_id = false ) {
 	$output = sprintf( '<a href="#" class="heart-this" id="heart-this-%s" data-post-id="%s"><span>%s</span></a>',
 		uniqid(),
 		$post_id,
-		heart_this_get_meta( $post_id )
+		number_format_i18n( heart_this_get_meta( $post_id ) )
 	);
 
 	$output = sprintf( '<span class="heart-this-wrap">%s</span>', $output );
 
+	/**
+	 * Filters the returned HTML markup
+	 *
+	 * @param string  $output  HTML markup
+	 * @param integer $post_id The post ID
+	 */
 	return apply_filters( 'heart_this_hearts', $output, $post_id );
 }
 
@@ -70,6 +76,12 @@ function heart_this_should_auto_show( $post_id ) {
 		$show = true;
 	}
 
+	/**
+	 * Whether or not the heart should be added
+	 *
+	 * @param boolean $show     Whether or not it should be added
+	 * @param integer $post_id  The post ID
+	 */
 	return (bool) apply_filters( 'heart_this_should_auto_show', $show, $post_id );
 }
 

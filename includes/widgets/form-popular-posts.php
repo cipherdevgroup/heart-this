@@ -19,7 +19,7 @@
 </p>
 <p>
 	<label for="<?php echo $this->get_field_id( 'posts' ); ?>"><?php esc_html_e( 'Posts:', 'heart-this' ); ?></label>
-	<input id="<?php echo $this->get_field_id( 'posts' ); ?>" name="<?php echo $this->get_field_name( 'posts' ); ?>" type="text" value="<?php echo $instance['posts']; ?>" size="3" />
+	<input id="<?php echo $this->get_field_id( 'posts' ); ?>" name="<?php echo $this->get_field_name( 'posts' ); ?>" type="number" min="1" value="<?php echo $instance['posts']; ?>" size="3" />
 </p>
 <p>
 	<input id="<?php echo $this->get_field_id( 'display_count' ); ?>" name="<?php echo $this->get_field_name( 'display_count' ); ?>" type="checkbox" value="1" <?php checked( $instance['display_count'] ); ?>>

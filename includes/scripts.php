@@ -20,6 +20,11 @@ function heart_this_get_suffix() {
 
 	if ( null === $suffix ) {
 		$debug   = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG;
+		/**
+		 * Whether or not to enable minified versions of styles and JavaScript files
+		 *
+		 * @param boolean $debug
+		 */
 		$enabled = (bool) apply_filters( 'heart_this_enable_suffix', ! $debug );
 		$suffix  = $enabled ? '.min' : '';
 	}
@@ -45,6 +50,11 @@ function _heart_this_enable_packed_js() {
 		return false;
 	}
 
+	/**
+	 * Whether or not to enable the bundled JS
+	 *
+	 * @param boolean true
+	 */
 	return (bool) apply_filters( 'heart_this_enable_packed_js', true );
 }
 
@@ -64,6 +74,11 @@ function heart_this_load_css() {
 		$load = true;
 	}
 
+	/**
+	 * Whether or not to enable the bundled CSS
+	 *
+	 * @param boolean $load True or false value
+	 */
 	if ( ! (bool) apply_filters( 'heart_this_load_css', $load ) ) {
 		return;
 	}
@@ -89,6 +104,11 @@ function heart_this_load_css() {
  * @return void
  */
 function heart_this_load_js() {
+	/**
+	 * Whether or not to enable the bundled JS
+	 *
+	 * @param boolean true
+	 */
 	if ( ! apply_filters( 'heart_this_load_js', true ) ) {
 		return;
 	}
