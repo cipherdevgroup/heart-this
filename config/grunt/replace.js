@@ -24,7 +24,7 @@ module.exports = {
 		options: {
 			patterns: [
 				{
-					match: /Heart This/g,
+					match: /HeartThis/g,
 					replacement: '<%= pkg.nameSpaced %>'
 				},
 				{

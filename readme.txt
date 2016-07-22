@@ -1,4 +1,4 @@
-=== Heart This ===
+=== HeartThis ===
 
 Contributors: fatmedia, wpsitecare
 Tags: cool stuff

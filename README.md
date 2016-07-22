@@ -1,4 +1,4 @@
-# Heart This
+# HeartThis
 
 Add a simple heart button to let people tell you they love your WordPress content.
 
@@ -9,11 +9,11 @@ __License:__ [MIT](http://wpsitecare.mit-license.org/)
 
 ## Description ##
 
-Heart This is an easy way to let users show you how much they love your content.
+HeartThis is an easy way to let users show you how much they love your content.
 
 ## Installation ##
 
-The best way to install this plugin is to either [download a copy](https://wordpress.org/plugins/heart-this/) from the WordPress.org repository or search for "Heart This" from your WordPress admin dashboard.
+The best way to install this plugin is to either [download a copy](https://wordpress.org/plugins/heart-this/) from the WordPress.org repository or search for "HeartThis" from your WordPress admin dashboard.
 
 ## Contributing ##
 

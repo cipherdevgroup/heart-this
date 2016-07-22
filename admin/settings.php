@@ -71,8 +71,8 @@ function heart_this_admin_register_settings() {
  */
 function heart_this_admin_add_settings_page() {
 	add_options_page(
-		__( 'Heart This Settings', 'heart-this' ),
-		__( 'Heart This Settings', 'heart-this' ),
+		__( 'HeartThis Settings', 'heart-this' ),
+		__( 'HeartThis Settings', 'heart-this' ),
 		'update_core',
 		'heart-this',
 		'heart_this_admin_settings_page'
@@ -98,7 +98,7 @@ function heart_this_admin_settings_page() {
  * @return void
  */
 function heart_this_admin_setting_section_intro() {
-	echo wpautop( esc_html__( 'Heart This allows you to display like icons throughout your site. Customize the output of Heart This with this settings page.', 'heart-this' ) );
+	echo wpautop( esc_html__( 'HeartThis allows you to display like icons throughout your site. Customize the output of HeartThis with this settings page.', 'heart-this' ) );
 }
 
 /**

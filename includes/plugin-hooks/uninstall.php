@@ -1,6 +1,6 @@
 <?php
 /**
- * Heart This activation, deactivation, and uninstall hooks.
+ * HeartThis activation, deactivation, and uninstall hooks.
  *
  * @package   HeartThis\PluginHooks
  * @copyright Copyright (c) 2016, WP Site Care

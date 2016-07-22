@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Heart This
+ * Plugin Name: HeartThis
  * Plugin URI:  https://github.com/wpsitecare/heart-this/
  * Description: Add a simple heart button to let people tell you they love your WordPress content.
  * Version:     0.1.0

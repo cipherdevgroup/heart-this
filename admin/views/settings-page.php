@@ -10,7 +10,7 @@
 
 ?>
 <div class="wrap">
-	<h1><?php esc_html_e( 'Heart This Settings', 'heart-this' ); ?></h2>
+	<h1><?php esc_html_e( 'HeartThis Settings', 'heart-this' ); ?></h2>
 	<form action="options.php" method="post">
 		<?php settings_fields( 'heart-this' ); ?>
 		<?php do_settings_sections( 'heart-this' ); ?>

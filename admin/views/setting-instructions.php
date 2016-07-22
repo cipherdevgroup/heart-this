@@ -9,9 +9,9 @@
  */
 
 ?>
-<p><?php esc_html_e( 'To use Heart This in your posts and pages you can use the shortcode:', 'heart-this' ); ?></p>
+<p><?php esc_html_e( 'To use HeartThis in your posts and pages you can use the shortcode:', 'heart-this' ); ?></p>
 <p><code>[heart_this_hearts]</code></p>
-<p><?php esc_html_e( 'To use Heart This manually in your theme template use the following PHP code:', 'heart-this' ); ?></p>
+<p><?php esc_html_e( 'To use HeartThis manually in your theme template use the following PHP code:', 'heart-this' ); ?></p>
 <p>
 	<code>
 		&lt;?php

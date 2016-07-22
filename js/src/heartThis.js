@@ -1,7 +1,7 @@
 /* global heartThis, cookie */
 
 /**
- * Heart This Public JavaScript
+ * HeartThis Public JavaScript
  *
  * @copyright Copyright 2015, WP Site Care
  * @license   MIT

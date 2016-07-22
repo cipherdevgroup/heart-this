@@ -2,7 +2,7 @@
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: Heart This 0.1.0\n"
+"Project-Id-Version: HeartThis 0.1.0\n"
 "Report-Msgid-Bugs-To: Robert Neu <translations@wpsitecare.com>\n"
 "POT-Creation-Date: 2016-07-20 22:30:01+00:00\n"
 "MIME-Version: 1.0\n"
@@ -41,13 +41,13 @@ msgid "Shortcode and Template Tag"
 msgstr ""
 
 #: admin/settings.php:74 admin/settings.php:75 admin/views/settings-page.php:13
-msgid "Heart This Settings"
+msgid "HeartThis Settings"
 msgstr ""
 
 #: admin/settings.php:101
 msgid ""
-"Heart This allows you to display like icons throughout your site. Customize "
-"the output of Heart This with this settings page."
+"HeartThis allows you to display like icons throughout your site. Customize "
+"the output of HeartThis with this settings page."
 msgstr ""
 
 #: admin/views/setting-ajax-hearts.php:14
@@ -65,12 +65,12 @@ msgid "Load the default plugin styles."
 msgstr ""
 
 #: admin/views/setting-instructions.php:12
-msgid "To use Heart This in your posts and pages you can use the shortcode:"
+msgid "To use HeartThis in your posts and pages you can use the shortcode:"
 msgstr ""
 
 #: admin/views/setting-instructions.php:14
 msgid ""
-"To use Heart This manually in your theme template use the following PHP "
+"To use HeartThis manually in your theme template use the following PHP "
 "code:"
 msgstr ""
 
@@ -79,7 +79,7 @@ msgid "Front Page, Archive Pages, and Search Results"
 msgstr ""
 
 #: includes/widgets/class-popular-posts.php:19
-msgid "Heart This - Popular Posts"
+msgid "HeartThis - Popular Posts"
 msgstr ""
 
 #: includes/widgets/class-popular-posts.php:21
@@ -108,7 +108,7 @@ msgid "Display like counts"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "Heart This"
+msgid "HeartThis"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
