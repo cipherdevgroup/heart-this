@@ -14,7 +14,7 @@
 <?php foreach ( heart_this_admin_get_show_option_values() as $show ) : ?>
 	<?php
 	if ( 'index' === $show ) :
-		$label = __( 'Front Page, Archive Pages, and Search Results', 'heart-this' );
+		$label = __( 'Blog Page, Archive Pages, and Search Results', 'heart-this' );
 	else :
 		$label = get_post_type_object( $show )->labels->name;
 	endif;
