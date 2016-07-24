@@ -63,26 +63,21 @@ function heart_this_should_auto_show( $post_id ) {
 		return false;
 	}
 
-	$show       = false;
-	$option     = (array) heart_this_get_option( 'show' );
-	$is_type    = in_array( get_post_type(), $option, true );
-	$is_archive = false;
+	$show    = false;
+	$option  = (array) heart_this_get_option( 'show' );
+	$type    = get_post_type();
+	$is_type = in_array( $type, $option, true );
 
-	if ( is_singular() && $is_type ) {
-		$show = true;
-	} else {
-		if ( is_archive() ) {
-
-			$is_archive = true;
-
-			if ( ( is_post_type_archive() || is_tax() ) && ! $is_type ) {
-				$is_archive = false;
-			}
+	if ( is_singular() ) {
+		if ( $is_type ) {
+			$show = true;
+		}
+	} elseif ( in_array( 'index', $option, true ) ) {
+		if ( 'post' === $type ) {
+			$is_type = true;
 		}
 
-		$is_index = is_home() || $is_archive || is_search();
-
-		if ( in_array( 'index', $option, true ) && $is_index ) {
+		if ( ( is_home() || is_archive() || is_search() ) && $is_type ) {
 			$show = true;
 		}
 	}
