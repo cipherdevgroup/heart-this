@@ -30,7 +30,7 @@ function heart_this_get_default_options() {
 	return array(
 		'show'        => array( 'post' ),
 		'enable_css'  => 'yes',
-		'ajax_hearts' => 'no',
+		'ajax_hearts' => defined( 'WP_CACHE' ) && WP_CACHE ? 'yes' : 'no',
 	);
 }
 
