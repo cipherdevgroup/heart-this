@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HeartThis 0.1.0\n"
 "Report-Msgid-Bugs-To: Robert Neu <translations@wpsitecare.com>\n"
-"POT-Creation-Date: 2016-07-20 22:30:01+00:00\n"
+"POT-Creation-Date: 2016-07-24 00:42:16+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -69,26 +69,23 @@ msgid "To use HeartThis in your posts and pages you can use the shortcode:"
 msgstr ""
 
 #: admin/views/setting-instructions.php:14
-msgid ""
-"To use HeartThis manually in your theme template use the following PHP "
-"code:"
+msgid "To use HeartThis manually in your theme template use the following PHP code:"
 msgstr ""
 
 #: admin/views/setting-show-on.php:17
-msgid "Front Page, Archive Pages, and Search Results"
+msgid "Blog Page, Archive Pages, and Search Results"
 msgstr ""
 
-#: includes/widgets/class-popular-posts.php:19
+#: includes/widgets/class-popular-posts.php:32
 msgid "HeartThis - Popular Posts"
 msgstr ""
 
-#: includes/widgets/class-popular-posts.php:21
-msgid "Displays your most popular posts sorted by most liked"
+#: includes/widgets/class-popular-posts.php:35
+msgid "Popular Posts"
 msgstr ""
 
-#: includes/widgets/class-popular-posts.php:27
-#: includes/widgets/class-popular-posts.php:44
-msgid "Popular Posts"
+#: includes/widgets/class-popular-posts.php:45
+msgid "Displays your most popular posts sorted by most liked"
 msgstr ""
 
 #: includes/widgets/form-popular-posts.php:13
