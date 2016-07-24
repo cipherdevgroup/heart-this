@@ -63,17 +63,28 @@ function heart_this_should_auto_show( $post_id ) {
 		return false;
 	}
 
-	$show = false;
-	$option = (array) heart_this_get_option( 'show' );
+	$show       = false;
+	$option     = (array) heart_this_get_option( 'show' );
+	$is_type    = in_array( get_post_type(), $option, true );
+	$is_archive = false;
 
-	if ( is_singular() && in_array( get_post_type(), $option, true ) ) {
+	if ( is_singular() && $is_type ) {
 		$show = true;
-	}
+	} else {
+		if ( is_archive() ) {
 
-	$is_other = ( is_home() || is_archive() || is_search() || in_array( get_post_type(), $option, true ) );
+			$is_archive = true;
 
-	if ( in_array( 'index', $option, true ) && $is_other ) {
-		$show = true;
+			if ( ( is_post_type_archive() || is_tax() ) && ! $is_type ) {
+				$is_archive = false;
+			}
+		}
+
+		$is_index = is_home() || $is_archive || is_search();
+
+		if ( in_array( 'index', $option, true ) && $is_index ) {
+			$show = true;
+		}
 	}
 
 	/**
