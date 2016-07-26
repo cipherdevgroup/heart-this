@@ -2,7 +2,7 @@
 /**
  * A custom widget to display popular posts based on heart counts.
  *
- * @package   HeartThis\Actions
+ * @package   HeartThis\Widgets
  * @copyright Copyright (c) 2016, WP Site Care
  * @license   MIT
  * @since     0.1.0
@@ -66,7 +66,7 @@ class Heart_This_Popular_Posts extends WP_Widget {
 		$title = apply_filters( 'widget_title', $title, $instance['title'], $this->id_base );
 		$posts = empty( $instance['posts'] ) ? 1 : $instance['posts'];
 
-		require HEART_THIS_DIR . 'includes/widgets/display-popular-posts.php';
+		require HEART_THIS_DIR . 'includes/widgets/views/display-popular-posts.php';
 	}
 
 	/**
@@ -128,6 +128,6 @@ class Heart_This_Popular_Posts extends WP_Widget {
 	public function form( $instance ) {
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 
-		require HEART_THIS_DIR . 'includes/widgets/form-popular-posts.php';
+		require HEART_THIS_DIR . 'includes/widgets/views/form-popular-posts.php';
 	}
 }

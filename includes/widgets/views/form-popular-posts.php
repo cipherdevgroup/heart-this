@@ -2,7 +2,7 @@
 /**
  * A custom widget to display popular posts based on heart counts.
  *
- * @package   HeartThis\Actions
+ * @package   HeartThis\Widgets\Views
  * @copyright Copyright (c) 2016, WP Site Care
  * @license   MIT
  * @since     0.1.0
