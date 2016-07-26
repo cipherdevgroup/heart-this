@@ -63,7 +63,7 @@ class Heart_This_Popular_Posts extends WP_Widget {
 	public function widget( $args, $instance ) {
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 
-		$title = apply_filters( 'widget_title', $title, $instance['title'], $this->id_base );
+		$title = apply_filters( 'widget_title', $instance['title'], $this->id_base );
 		$posts = empty( $instance['posts'] ) ? 1 : $instance['posts'];
 
 		require HEART_THIS_DIR . 'includes/widgets/views/display-popular-posts.php';
@@ -83,12 +83,12 @@ class Heart_This_Popular_Posts extends WP_Widget {
 	 * @return array Settings to save or bool false to cancel saving
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance = $new_instance;
+		$instance = $old_instance;
 
-		$instance['title']         = wp_strip_all_tags( $instance['title'] );
-		$instance['description']   = strip_tags( $instance['description'], '<a><b><strong><i><em><span>' );
-		$instance['posts']         = empty( $instance['posts'] ) ? 1 : absint( $instance['posts'] );
-		$instance['display_count'] = empty( $instance['display_count'] ) ? 0 : 1;
+		$instance['title']         = wp_strip_all_tags( $new_instance['title'] );
+		$instance['description']   = strip_tags( $new_instance['description'], '<a><b><strong><i><em><span>' );
+		$instance['posts']         = empty( $new_instance['posts'] ) ? 1 : absint( $new_instance['posts'] );
+		$instance['display_count'] = empty( $new_instance['display_count'] ) ? 0 : 1;
 
 		return $instance;
 	}
