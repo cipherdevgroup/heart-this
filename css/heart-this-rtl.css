@@ -1,0 +1,85 @@
+/**!
+ * Plugin Name: HeartThis
+ * Version:     0.1.0
+ * Author:      WP Site Care
+ * License:     MIT
+ */
+@-webkit-keyframes heart-burst {
+  from {
+    background-position: right;
+  }
+  to {
+    background-position: left;
+  }
+}
+@keyframes heart-burst {
+  from {
+    background-position: right;
+  }
+  to {
+    background-position: left;
+  }
+}
+
+.heart-this-wrap {
+  display: block;
+  clear: both;
+  text-align: left;
+  width: 100%;
+}
+
+.heart-this-wrap .heart-this {
+  color: #aab8c2;
+  border: 0;
+  display: inline-block;
+  height: 40px;
+  font-size: 14px;
+  text-decoration: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  vertical-align: middle;
+}
+
+.heart-this-wrap .heart-this::before {
+  background-image: url("../images/heart-animation.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  -webkit-background-size: 2900% 2900%;
+          background-size: 2900%;
+  border: 0;
+  content: "";
+  display: inline-block;
+  cursor: pointer;
+  height: 100%;
+  width: 50px;
+  text-decoration: none;
+  -webkit-transition: none;
+  transition: none;
+  vertical-align: middle;
+}
+
+.heart-this-wrap .heart-this:hover, .heart-this-wrap .heart-this:focus, .heart-this-wrap .heart-this.active {
+  background: transparent;
+  border: 0;
+  color: #e2264d;
+  text-decoration: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.heart-this-wrap .heart-this:hover::before, .heart-this-wrap .heart-this:focus::before, .heart-this-wrap .heart-this.active::before {
+  background-position: left;
+}
+
+.heart-this-wrap .heart-this.is-animating::before {
+  -webkit-animation: heart-burst 0.8s steps(28) 1;
+          animation: heart-burst 0.8s steps(28) 1;
+}
+
+.heart-this-wrap .heart-this span {
+  display: inline-block;
+  margin-right: -5px;
+  vertical-align: baseline;
+  line-height: 1;
+}
+/*# sourceMappingURL=heart-this-rtl.css.map */
