@@ -15,7 +15,7 @@ When a user clicks the heart button, their vote is counted and displayed as a si
 
 HeartThis has the ability to automatically display hearts at the bottom of any post type, which can be selected from the options screen inside the WordPress admin dashboard. If you'd like more control over where and how your hearts display, you can also use the `[heart_this]` shortcode or `heart_this_hearts()` template tag to display them inside your content or theme.
 
-![heart-this-demo](https://cloud.githubusercontent.com/assets/2184093/17186262/7d73e8ba-5402-11e6-83f5-08c5971e2c29.gif)
+![heart-this-demo](https://cloud.githubusercontent.com/assets/2184093/17304168/3b528e66-57f2-11e6-9d4c-2661f79e7173.gif)
 
 ## Installation ##
 
