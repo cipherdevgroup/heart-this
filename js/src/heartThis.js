@@ -34,7 +34,7 @@
 				$link.addClass( 'active' );
 			}
 
-			if ( $( 'body' ).hasClass( 'ajax-heart-this' ) ) {
+			if ( $( document.body ).hasClass( 'ajax-heart-this' ) ) {
 				$link.find( 'span' ).load( heartThis.ajaxURL, {
 					action: 'heart-this',
 					security: heartThis.ajaxNonce,
