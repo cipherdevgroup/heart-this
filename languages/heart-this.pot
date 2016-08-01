@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HeartThis 0.1.0\n"
 "Report-Msgid-Bugs-To: Robert Neu <translations@wpsitecare.com>\n"
-"POT-Creation-Date: 2016-07-24 00:42:16+00:00\n"
+"POT-Creation-Date: 2016-08-01 17:34:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,10 +40,6 @@ msgstr ""
 msgid "Shortcode and Template Tag"
 msgstr ""
 
-#: admin/settings.php:74 admin/settings.php:75 admin/views/settings-page.php:13
-msgid "HeartThis Settings"
-msgstr ""
-
 #: admin/settings.php:101
 msgid ""
 "HeartThis allows you to display like icons throughout your site. Customize "
@@ -76,6 +72,10 @@ msgstr ""
 msgid "Blog Page, Archive Pages, and Search Results"
 msgstr ""
 
+#: admin/views/settings-page.php:13
+msgid "HeartThis Settings"
+msgstr ""
+
 #: includes/widgets/class-popular-posts.php:32
 msgid "HeartThis - Popular Posts"
 msgstr ""
@@ -88,19 +88,19 @@ msgstr ""
 msgid "Displays your most popular posts sorted by most liked"
 msgstr ""
 
-#: includes/widgets/form-popular-posts.php:13
+#: includes/widgets/views/form-popular-posts.php:13
 msgid "Title:"
 msgstr ""
 
-#: includes/widgets/form-popular-posts.php:17
+#: includes/widgets/views/form-popular-posts.php:17
 msgid "Description:"
 msgstr ""
 
-#: includes/widgets/form-popular-posts.php:21
+#: includes/widgets/views/form-popular-posts.php:21
 msgid "Posts:"
 msgstr ""
 
-#: includes/widgets/form-popular-posts.php:26
+#: includes/widgets/views/form-popular-posts.php:26
 msgid "Display like counts"
 msgstr ""
 
