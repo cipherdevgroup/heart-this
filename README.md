@@ -4,7 +4,7 @@ Add a simple heart button to let people tell you they love your WordPress conten
 
 __Contributors:__ [Robert Neu](https://github.com/robneu)  
 __Requires:__ WordPress 4.5  
-__Tested up to:__ WordPress 4.5  
+__Tested up to:__ WordPress 4.5.3  
 __License:__ [MIT](http://wpsitecare.mit-license.org/)  
 
 ## Description ##
