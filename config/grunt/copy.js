@@ -142,7 +142,7 @@ module.exports = {
 					'!gruntfile.js',
 					'!package.json'
 				],
-				dest: '<%= paths.release %><%= pkg.nameDashed %>-<%= pkg.version %>'
+				dest: '<%= paths.release %><%= pkg.version %>'
 			}
 		]
 	}
