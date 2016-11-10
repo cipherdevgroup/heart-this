@@ -29,25 +29,32 @@ add_action( 'wp_enqueue_scripts', 'heart_this_load_js',  20 );
  *
  * @see heart_this_register_widgets
  */
-add_action( 'widgets_init', 'heart_this_register_widgets' );
+add_action( 'init', 'heart_this_register_shortcodes', 10 );
+
+/**
+ * Callback defined in includes/utility.php
+ *
+ * @see heart_this_register_widgets
+ */
+add_action( 'widgets_init', 'heart_this_register_widgets', 10 );
 
 /**
  * Callback defined in includes/utility.php
  *
  * @see heart_this_add_meta
  */
-add_action( 'publish_post', 'heart_this_add_meta' );
+add_action( 'publish_post', 'heart_this_add_meta', 10 );
 
 /**
  * Callback defined in includes/utility.php
  *
  * @see heart_this_ajax_callback
  */
-add_action( 'wp_ajax_heart-this', 'heart_this_ajax_callback' );
+add_action( 'wp_ajax_heart-this', 'heart_this_ajax_callback', 10 );
 
 /**
  * Callback defined in includes/utility.php
  *
  * @see heart_this_ajax_callback
  */
-add_action( 'wp_ajax_nopriv_heart-this', 'heart_this_ajax_callback' );
+add_action( 'wp_ajax_nopriv_heart-this', 'heart_this_ajax_callback', 10 );

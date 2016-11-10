@@ -9,6 +9,17 @@
  */
 
 /**
+ * Register all shortcodes in the plugin.
+ *
+ * @since  0.1.0
+ * @access public
+ * @return void
+ */
+function heart_this_register_shortcodes() {
+	add_shortcode( 'heart_this', 'heart_this_shortcode' );
+}
+
+/**
  * Register all widgets in the plugin.
  *
  * @since  0.1.0

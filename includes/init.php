@@ -23,13 +23,6 @@ require_once HEART_THIS_DIR . 'includes/actions.php';
 require_once HEART_THIS_DIR . 'includes/filters.php';
 
 /**
- * Callback defined in includes/utility.php
- *
- * @see heart_this_shortcode
- */
-add_shortcode( 'heart_this', 'heart_this_shortcode' );
-
-/**
  * Provide reliable access to the plugin's functions and methods after
  * the plugin's global actions, filters, and functionality are initialized.
  *
