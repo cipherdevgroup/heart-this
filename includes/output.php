@@ -24,7 +24,7 @@ function heart_this_get_hearts( $post_id = false ) {
 	$output = sprintf( '<a href="#" class="heart-this" id="heart-this-%s" data-post-id="%s"><span>%s</span></a>',
 		uniqid(),
 		$post_id,
-		number_format_i18n( heart_this_get_meta( $post_id ) )
+		absint( heart_this_get_meta( $post_id ) )
 	);
 
 	$output = sprintf( '<span class="heart-this-wrap">%s</span>', $output );
