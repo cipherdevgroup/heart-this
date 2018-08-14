@@ -1,48 +1,43 @@
 {
-  "nameSpaced":    "HeartThis",
+  "nameSpaced": "HeartThis",
   "nameSpacedLow": "heart this",
-  "nameDashed":    "heart-this",
-  "nameUscore":    "heart_this",
-  "nameUscoreUp":  "HEART_THIS",
+  "nameDashed": "heart-this",
+  "nameUscore": "heart_this",
+  "nameUscoreUp": "HEART_THIS",
   "nameUscoreCam": "Heart_This",
-  "nameCamel":     "HeartThis",
-  "nameCamelLow":  "heartThis",
-  "version":       "0.1.0",
-  "copyright":     "2016",
-  "license":       "MIT",
-  "private":       true,
+  "nameCamel": "HeartThis",
+  "nameCamelLow": "heartThis",
+  "version": "0.1.0",
+  "copyright": "2018",
+  "license": "MIT",
+  "private": true,
   "bugs": {
-    "url":   "http://www.wpsitecare.com/support/",
-    "email": "hello@wpsitecare.com"
+    "url": "https://cipherdevelopment.com/support/",
+    "email": "hello@cipherdevelopment.com"
   },
   "contributors": [
     {
       "name": "Robert Neu",
-      "url":  "http://www.wpsitecare.com"
+      "url": "https://cipherdevelopment.com"
     },
     {
-      "name": "WP Site Care",
-      "url":  "http://www.wpsitecare.com"
+      "name": "Ozzy Rodriguez",
+      "url": "https://cipherdevelopment.com"
+    },
+    {
+      "name": "Cipher",
+      "url": "https://cipherdevelopment.com"
     }
   ],
-  "plugin": {
-    "name":       "HeartThis",
-    "uri":        "https://github.com/wpsitecare/heart-this",
-    "author":     "WP Site Care",
-    "license":    "MIT",
-    "licenseuri": "http://wpsitecare.mit-license.org/"
-  },
-  "pot": {
-    "reportmsgidbugsto": "Robert Neu <translations@wpsitecare.com>",
-    "lasttranslator":    "Robert Neu <translations@wpsitecare.com>",
-    "languageteam":      "Robert Neu <translations@wpsitecare.com>"
-  },
   "repository": {
     "type": "git",
-    "url":  "https://github.com/wpsitecare/heart-this.git"
+    "url": "https://github.com/cipherdevgroup/heart-this.git"
   },
   "devDependencies": {
-    "sitecare-plugin-config": "wpsitecare/sitecare-plugin-config",
+    "cipher-plugin-config": "cipherdevgroup/cipher-plugin-config",
     "load-project-config": "~0.2.0"
+  },
+  "dependencies": {
+    "cookie_js": "^1.2.2"
   }
 }
