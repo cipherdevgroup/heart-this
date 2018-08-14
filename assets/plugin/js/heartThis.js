@@ -52,12 +52,12 @@
 		if ( 'hearted' !== cookie.get( cookieID ) ) {
 			cookie.set( cookieID, 'hearted' );
 			updatedCount = currentCount + 1;
-			$allNums.text( updatedCount );
+			$allNums.text( updatedCount.toString().replace( /\B(?=(\d{3})+(?!\d))/g, ',' ) );
 			$instances.addClass( 'active is-animating' );
 		} else {
 			cookie.set( cookieID, 'unhearted' );
 			updatedCount = currentCount - 1;
-			$allNums.text( updatedCount );
+			$allNums.text( updatedCount.toString().replace( /\B(?=(\d{3})+(?!\d))/g, ',' ) );
 			$instances.removeClass( 'active' );
 		}
 
@@ -69,7 +69,7 @@
 			var $link    = $( this ),
 				postID   = $link.data( 'post-id' ),
 				cookieID = postID + cookieSuffix,
-				currentCount = ( parseInt( $link.find( 'span' ).text(), 10 ) || 0 ),
+				currentCount = ( parseInt( $link.find( 'span' ).text().replace( /,/g, '' ), 10 ) || 0 ),
 				updatedCount;
 
 			updatedCount = updateCount( currentCount, cookieID, postID );
