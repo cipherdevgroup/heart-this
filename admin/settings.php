@@ -3,7 +3,7 @@
  * Functions for registering and interacting with plugin settings.
  *
  * @package   HeartThis\Admin\Actions
- * @copyright Copyright (c) 2016, WP Site Care
+ * @copyright Copyright (c) 2018, Cipher Development, LLC
  * @license   MIT
  * @since     0.1.0
  */

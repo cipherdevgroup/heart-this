@@ -3,7 +3,7 @@
  * Functions to display heart counts on the front end.
  *
  * @package   HeartThis\Functions\Output
- * @copyright Copyright (c) 2016, WP Site Care
+ * @copyright Copyright (c) 2018, Cipher Development, LLC
  * @license   MIT
  * @since     0.1.0
  */

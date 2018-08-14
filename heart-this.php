@@ -1,18 +1,18 @@
 <?php
 /**
  * Plugin Name: HeartThis
- * Plugin URI:  https://github.com/wpsitecare/heart-this/
+ * Plugin URI:  https://github.com/cipherdevgroup/heart-this/
  * Description: Add a simple heart button to let people tell you they love your WordPress content.
  * Version:     0.1.0
- * Author:      WP Site Care
- * Author URI:  http://www.wpsitecare.com
+ * Author:      Cipher
+ * Author URI:  https://cipherdevelopment.com
  * License:     MIT
- * License URI: http://wpsitecare.mit-license.org/
+ * License URI: http://cipherdevelopment.mit-license.org/
  * Text Domain: heart-this
  * Domain Path: /languages
  *
  * @package    HeartThis
- * @copyright  Copyright (c) 2016, WP Site Care
+ * @copyright  Copyright (c) 2018, Cipher Development
  * @license    MIT
  * @since      0.1.0
  */

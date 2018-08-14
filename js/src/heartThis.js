@@ -3,7 +3,7 @@
 /**
  * HeartThis Public JavaScript
  *
- * @copyright Copyright 2015, WP Site Care
+ * @copyright Copyright 2018, Cipher Development, LLC
  * @license   MIT
  */
 ( function( window, $, undefined ) {

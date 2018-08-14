@@ -3,7 +3,7 @@
  * Initialize and register all plugin hooks.
  *
  * @package   HeartThis\PluginHooks
- * @copyright Copyright (c) 2016, WP Site Care
+ * @copyright Copyright (c) 2018, Cipher Development, LLC
  * @license   MIT
  * @since     0.1.0
  */

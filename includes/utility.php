@@ -3,7 +3,7 @@
  * Functions for registering things and handling data.
  *
  * @package   HeartThis\Functions\Utility
- * @copyright Copyright (c) 2016, WP Site Care
+ * @copyright Copyright (c) 2018, Cipher Development, LLC
  * @license   MIT
  * @since     0.1.0
  */
