@@ -5,13 +5,31 @@ module.exports = {
 			{
 				expand: true,
 				flatten: true,
-				cwd: '<%= paths.tmp %>',
+				cwd: '<%= paths.node %>',
+				src: [],
+				dest: '<%= paths.cssVend %>'
+			}
+		]
+	},
+	js: {
+		files: [
+			{
+				expand: true,
+				flatten: true,
+				cwd: '<%= paths.jsSrc %>',
 				src: [
-					'*.css',
-					'**/*.css'
+					'heartThis.js'
 				],
-				dest: 'css/',
-				filter: 'isFile'
+				dest: '<%= paths.jsDist %>'
+			},
+			{
+				expand: true,
+				flatten: true,
+				cwd: '<%= paths.node %>',
+				src: [
+					'cookie_js/cookie.js'
+				],
+				dest: '<%= paths.jsVend %>'
 			}
 		]
 	},
@@ -59,22 +77,6 @@ module.exports = {
 				dest: '<%= paths.cssSrc %>'
 			}
 		]
-	},
-	bowerjs: {
-		files: [
-			{
-				expand: true,
-				flatten: true,
-				cwd: 'bower_components/',
-				src: [
-					'cookie/cookie.js'
-				],
-				dest: '<%= paths.jsSrc %>vendor/'
-			}
-		]
-	},
-	bowerfonts: {
-		files: []
 	},
 	rename: {
 		files: [

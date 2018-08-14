@@ -2,10 +2,10 @@
 module.exports = {
 	js: {
 		src: [
-			'<%= paths.jsSrc %>vendor/cookie.js',
-			'<%= paths.jsSrc %><%= pkg.nameCamelLow %>.js'
+			'<%= paths.jsVend %>cookie.js',
+			'<%= paths.jsSrc %>heartThis.js'
 		],
-		dest: 'js/<%= pkg.nameCamelLow %>.pkgd.js'
+		dest: '<%= paths.jsDist %><%= pkg.nameCamelLow %>.pkgd.js'
 	},
 	adminjs: {
 		src: [
