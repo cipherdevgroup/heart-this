@@ -12,8 +12,8 @@ tmp/
 release/
 
 # Auto-Generated Files
-js/*
-css/*
+!js/*
+!css/*
 images/*
 !js/src/
 !js/src/*
