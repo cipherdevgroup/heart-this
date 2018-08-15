@@ -1,9 +1,9 @@
 === HeartThis ===
 
-Contributors: fatmedia, wpsitecare
+Contributors: fatmedia, cipherdevgroup, ozzyr
 Tags: cool stuff
 Requires at least: 4.5
-Tested up to: 4.6.1
+Tested up to: 4.9.8
 Stable tag: 0.1.0
 License: MIT
 
@@ -19,7 +19,7 @@ HeartThis has the ability to automatically display hearts at the bottom of any p
 
 = Contributing =
 
-If you'd like to submit code patches or contribute in any other way, please fork the plugin on GitHub. https://github.com/wpsitecare/heart-this
+If you'd like to submit code patches or contribute in any other way, please fork the plugin on GitHub. https://github.com/cipherdevgroup/heart-this
 
 == Screenshots ==
 
