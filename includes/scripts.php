@@ -78,6 +78,8 @@ function heart_this_load_css() {
  * @return void
  */
 function heart_this_load_js() {
+	global $locale;
+
 	/**
 	 * Whether or not to enable the bundled JS
 	 *
@@ -96,8 +98,6 @@ function heart_this_load_js() {
 		HEART_THIS_VERSION,
 		true
 	);
-
-	global $locale;
 
 	wp_localize_script(
 		'heart-this',
