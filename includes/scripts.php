@@ -97,13 +97,15 @@ function heart_this_load_js() {
 		true
 	);
 
+	global $locale;
+
 	wp_localize_script(
 		'heart-this',
 		'heartThis',
 		array(
 			'ajaxURL'     => admin_url( 'admin-ajax.php' ),
 			'ajaxNonce'   => wp_create_nonce( 'heart-this-get-set' ),
-			'heartLocale' => str_replace( '_', '-', get_locale() ),
+			'heartLocale' => str_replace( '_', '-', $locale ),
 		)
 	);
 }
