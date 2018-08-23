@@ -78,8 +78,6 @@ function heart_this_load_css() {
  * @return void
  */
 function heart_this_load_js() {
-	global $locale;
-
 	/**
 	 * Whether or not to enable the bundled JS
 	 *
@@ -105,7 +103,7 @@ function heart_this_load_js() {
 		array(
 			'ajaxURL'     => admin_url( 'admin-ajax.php' ),
 			'ajaxNonce'   => wp_create_nonce( 'heart-this-get-set' ),
-			'heartLocale' => str_replace( '_', '-', $locale ),
+			'heartLocale' => str_replace( '_', '-', get_locale() ),
 		)
 	);
 }
