@@ -14,7 +14,7 @@ release/
 # Auto-Generated Files
 !js/*
 !css/*
-images/*
+!images/*
 !js/src/
 !js/src/*
 !js/src/**/*
