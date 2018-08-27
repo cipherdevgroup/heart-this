@@ -9,7 +9,6 @@
 ( function( window, $, undefined ) {
 	'use strict';
 
-	var $hearts   = $( '.heart-this' );
 	var cookieSuffix = '-heart-this-status';
 	var heartFormat = new Intl.NumberFormat( heartThis.heartLocale );
 	var delay = (function() {
@@ -19,12 +18,11 @@
 			timer = setTimeout( callback, ms );
 		};
 	})();
-
 	cookie.defaults.expires = 999;
 	cookie.defaults.path = '/';
 
 	function setupHearts() {
-		$hearts.each(function() {
+		$( '.heart-this' ).each(function() {
 			var $link    = $( this );
 			var postID   = $link.data( 'post-id' );
 			var cookieID = postID + cookieSuffix;
@@ -78,7 +76,7 @@
 	}
 
 	function handleClicks() {
-		$hearts.on( 'click touchstart', function() {
+		$( document ).on( 'click touchstart', '.heart-this', function() {
 			var $link    = $( this );
 			var postID   = $link.data( 'post-id' );
 			var cookieID = postID + cookieSuffix;
@@ -103,7 +101,7 @@
 	}
 
 	function stopAnimating() {
-		$hearts.on( 'webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
+		$( document ).on( 'webkitAnimationEnd oanimationend msAnimationEnd animationend', '.heart-this', function() {
 			$( this ).removeClass( 'is-animating' );
 		});
 	}
