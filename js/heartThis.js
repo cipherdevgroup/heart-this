@@ -9,27 +9,25 @@
 ( function( window, $, undefined ) {
 	'use strict';
 
-	var $hearts   = $( '.heart-this' ),
-		cookieSuffix = '-heart-this-status',
-		delay,
-		heartFormat = new Intl.NumberFormat( heartThis.heartLocale );
-
-	cookie.defaults.expires = 999;
-	cookie.defaults.path = '/';
-
-	delay = (function() {
+	var $hearts   = $( '.heart-this' );
+	var cookieSuffix = '-heart-this-status';
+	var heartFormat = new Intl.NumberFormat( heartThis.heartLocale );
+	var delay = (function() {
 		var timer = 0;
 		return function( callback, ms ) {
-			clearTimeout ( timer );
+			clearTimeout( timer );
 			timer = setTimeout( callback, ms );
 		};
 	})();
 
+	cookie.defaults.expires = 999;
+	cookie.defaults.path = '/';
+
 	function setupHearts() {
 		$hearts.each(function() {
-			var $link    = $( this ),
-				postID   = $link.data( 'post-id' ),
-				cookieID = postID + cookieSuffix;
+			var $link    = $( this );
+			var postID   = $link.data( 'post-id' );
+			var cookieID = postID + cookieSuffix;
 
 			if ( 'hearted' === cookie.get( cookieID ) ) {
 				$link.addClass( 'active' );
@@ -45,10 +43,24 @@
 		});
 	}
 
-	function updateCount( currentCount, cookieID, postID ) {
-		var $instances = $( '[data-post-id="' + postID + '"]' ),
-			$allNums = $instances.find( 'span' ),
-			updatedCount;
+	function getCurrentCount( $element ) {
+		var $count = $element.find( 'span' );
+
+		if ( 0 === $count.length ) {
+			return 0;
+		}
+
+		// Clean all non-numeric characters.
+		$count = $count.text().replace( /[^0-9]/g, '' );
+
+		return parseInt( $count, 10 );
+	}
+
+	function updateCount( $link, cookieID, postID ) {
+		var $instances = $( '[data-post-id="' + postID + '"]' );
+		var $allNums = $instances.find( 'span' );
+		var currentCount = getCurrentCount( $link );
+		var updatedCount;
 
 		if ( 'hearted' !== cookie.get( cookieID ) ) {
 			cookie.set( cookieID, 'hearted' );
@@ -67,13 +79,11 @@
 
 	function handleClicks() {
 		$hearts.on( 'click touchstart', function() {
-			var $link    = $( this ),
-				postID   = $link.data( 'post-id' ),
-				cookieID = postID + cookieSuffix,
-				currentCount = ( parseInt( $link.find( 'span' ).text().replace( /[.,]/g, '' ), 10 ) || 0 ),
-				updatedCount;
+			var $link    = $( this );
+			var postID   = $link.data( 'post-id' );
+			var cookieID = postID + cookieSuffix;
 
-			updatedCount = updateCount( currentCount, cookieID, postID );
+			var updatedCount = updateCount( $link, cookieID, postID );
 
 			if ( cookie.get( cookieID ) ) {
 				delay( function() {
